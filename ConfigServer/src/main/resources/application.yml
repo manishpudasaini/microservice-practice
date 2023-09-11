@@ -5,6 +5,7 @@ spring:
   application:
     name: CONFIG-SERVER
 
+   ##using git as config server
   cloud:
     config:
       server:
@@ -13,3 +14,16 @@ spring:
           clone-on-start: true
           username: "manishpudasaini"    #github username
           password: "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"  #personal access token generated from github
+
+    ##we can also use the same service as the central configuration server
+
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: file:./ConfigServer/config-repo
+
+
+
+  profiles:
+    active: native

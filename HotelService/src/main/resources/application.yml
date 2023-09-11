@@ -2,6 +2,12 @@ server:
   port: 8082
 
 spring:
+  application:
+    name: hotel-service
+  profiles:
+    active: hotel
+
+
   datasource:
     url: jdbc:postgresql://localhost:5433/hotelservice
     username: postgres
@@ -14,13 +20,15 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  application:
-    name: hotelservice
 
 
-  #config server is used to extract the eurika server configuration
+
+  #config server is used to extract the eurika server configuration to extract from git
   config:
     import: optional:configserver:https://localhost:8085/
+
+
+
 
 ##register the user service application to eurika server
 #eureka:

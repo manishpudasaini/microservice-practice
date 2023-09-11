@@ -1,0 +1,7 @@
+#register the user service application to eurika server
+#eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+    preferIpAddress: true
