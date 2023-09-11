@@ -1,0 +1,15 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/manishpudasaini/microservice-configserver  #repo link to store config file
+          clone-on-start: true
+          username: "manishpudasaini"    #github username
+          password: "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"  #personal access token generated from github

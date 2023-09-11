@@ -10,15 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user_")
+@Table(name = "user_",uniqueConstraints = {
+        @UniqueConstraint(name = "uk_user_email",columnNames = "EMAIL"),
+        @UniqueConstraint(name = "uk_user_mobile",columnNames = "PHONE")
+})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
+    @GeneratedValue(generator = "USER_SEQ_GEN",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "USER_SEQ_GEN",sequenceName = "USER_SEQ",initialValue = 1,allocationSize = 1)
     private int userId;
 
     @Column(name = "NAME")

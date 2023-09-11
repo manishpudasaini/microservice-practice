@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Hotel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "HOTEL_SEQ_GEN",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "HOTEL_SEQ_GEN",sequenceName = "HOTEL_SEQ",initialValue = 1,allocationSize = 1)
     private int id;
     private String name;
     private String location;

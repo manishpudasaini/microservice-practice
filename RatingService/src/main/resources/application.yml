@@ -1,3 +1,6 @@
+server:
+  port: 8083
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/ratingservice
@@ -14,13 +17,15 @@ spring:
   application:
     name: ratingservice
 
-server:
-  port: 8083
 
-#register the user service application to eurika server
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-    instance:
-    preferIpAddress: true
+  #config server is used to extract the eurika server configuration
+  config:
+    import: optional:configserver:https://localhost:8085/
+
+##register the user service application to eurika server
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#    instance:
+#    preferIpAddress: true

@@ -14,7 +14,7 @@
 	<name>RatingService</name>
 	<description>Microservice rating service</description>
 	<properties>
-		<java.version>20</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -47,6 +47,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.0.3</version>
+		</dependency>
+
+		<!-- Config client to fecth data from config server-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
 	</dependencies>

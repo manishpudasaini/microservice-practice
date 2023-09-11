@@ -10,17 +10,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController  // Required RestCotroller
 @RequiredArgsConstructor
-@RequestMapping("/rating")
+@RequestMapping("/ratings")
 public class RatingController {
     private final RatingService ratingService;
-    @PostMapping("/save")
+    @PostMapping
     public ResponseEntity<RatingDto> saveRating(@RequestBody RatingDto ratingDto){
         return new ResponseEntity<>(ratingService.saveRating(ratingDto), HttpStatus.OK);
+//        ResponseEntity.ok(ratingService.saveRating(ratingDto))  retur this
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<RatingDto>> allRating(){
       return new ResponseEntity<>(ratingService.getAllRating(),HttpStatus.OK);
     }

@@ -25,19 +25,19 @@ public class RatingServiceImpl implements RatingService{
     @Override
     public List<RatingDto> getAllRating() {
         List<Rating> allRating = ratingRepo.findAll();
-        return allRating.stream().map(this::entityToDto).toList();
+        return allRating.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
     @Override
     public List<RatingDto> findByUserId(Integer id) {
         List<Rating> allRating = ratingRepo.findByUserId(id);
-        return allRating.stream().map(this::entityToDto).toList();
+        return allRating.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
     @Override
     public List<RatingDto> findByHotelId(Integer id) {
         List<Rating> ratings = ratingRepo.findByHotelId(id);
-        return ratings.stream().map(this::entityToDto).toList();
+        return ratings.stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
     @Override

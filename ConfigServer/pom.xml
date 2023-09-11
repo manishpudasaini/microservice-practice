@@ -8,11 +8,11 @@
 		<version>3.1.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.eurikaserver</groupId>
-	<artifactId>eurikaServer</artifactId>
+	<groupId>com.configServer</groupId>
+	<artifactId>ConfigServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eurikaServer</name>
-	<description>microservice practice eurika server</description>
+	<name>ConfigServer</name>
+	<description>This is config server</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
@@ -20,7 +20,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
 		<dependency>

@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/hotelservice
@@ -14,14 +17,16 @@ spring:
   application:
     name: hotelservice
 
-server:
-  port: 8082
 
-#register the user service application to eurika server
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-    instance:
-    preferIpAddress: true
+  #config server is used to extract the eurika server configuration
+  config:
+    import: optional:configserver:https://localhost:8085/
+
+##register the user service application to eurika server
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#    instance:
+#    preferIpAddress: true
 

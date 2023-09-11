@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Rating {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "RATING_SEQ_GEN",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "RATING_SEQ_GEN",sequenceName = "RATING_SEQ",initialValue = 1,allocationSize = 1)
     private int ratingId;
     private int userId;
     private int hotelId;

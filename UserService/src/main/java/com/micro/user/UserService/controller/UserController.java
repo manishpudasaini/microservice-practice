@@ -15,11 +15,11 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/save")
+    @PostMapping
     @Operation(summary = "Save User info", tags = {"Save-User"})
     @ApiResponse(responseCode = "200",description = "Return User dto", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))})
     public ResponseEntity<UserDto> saveUser(@RequestBody UserDto userDto){
@@ -27,7 +27,7 @@ public class UserController {
         return new ResponseEntity<>(afterSave,HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     @Operation(summary = "get all User info", tags = {"get-all-User"})
     @ApiResponse(responseCode = "200",description = "Return User dto list", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))})
     public ResponseEntity<List<UserDto>> allUsers(){

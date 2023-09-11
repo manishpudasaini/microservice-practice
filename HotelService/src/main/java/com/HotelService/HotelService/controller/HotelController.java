@@ -11,14 +11,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/hotel")
+@RequestMapping("/api/hotels")
 public class HotelController {
     private final HotelService hotelService;
-    @PostMapping("/save")
+    @PostMapping
     public ResponseEntity<HotelDto> saveHotel(@RequestBody HotelDto hotelDto){
         return new ResponseEntity<>(hotelService.saveHotel(hotelDto), HttpStatus.OK);
     }
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<HotelDto>> getAllHotel(){
         return new ResponseEntity<>(hotelService.getAllHotel(),HttpStatus.OK);
     }
