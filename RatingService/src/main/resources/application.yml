@@ -19,8 +19,8 @@ spring:
 
 
   #config server is used to extract the eurika server configuration
-  config:
-    import: optional:configserver:https://localhost:8085/
+#  config:
+#    import: optional:configserver:https://localhost:8085/
 
 ##register the user service application to eurika server
 #eureka:

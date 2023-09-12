@@ -10,9 +10,14 @@ spring:
     gateway:
       routes:
         - id: hotel-service
-          uri:  http://localhost:8082/
+          uri:  http://localhost:8082/   # it indicates that the path given in predicates will be redirects to his
           predicates:
             - Path=/api/hotels/**
+        - id: user-service
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/users/**
+
 
 
 

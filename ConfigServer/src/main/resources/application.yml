@@ -1,11 +1,13 @@
-server:
-  port: 8085
 
 spring:
   application:
-    name: CONFIG-SERVER
+    name: config-server
+  profiles:
+    active: native
 
-   ##using git as config server
+
+
+    ##using git as config server
   cloud:
     config:
       server:
@@ -13,17 +15,26 @@ spring:
           uri: https://github.com/manishpudasaini/microservice-configserver  #repo link to store config file
           clone-on-start: true
           username: "manishpudasaini"    #github username
-          password: "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"  #personal access token generated from github
+          password: "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"  #personal access token generated from github
+      label: main
+
 
     ##we can also use the same service as the central configuration server
-
 #  cloud:
 #    config:
 #      server:
 #        native:
 #          search-locations: file:./ConfigServer/config-repo
 
+server:
+  port: 8085
 
 
-  profiles:
-    active: native
+#eureka config
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#    instance:
+#    preferIpAddress: true
+

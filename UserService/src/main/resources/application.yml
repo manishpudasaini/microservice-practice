@@ -15,19 +15,19 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
   application:
-    name: userservice
+    name: user-service
 
    #config server is used to extract the eurika server configuration
-  config:
-    import: optional:configserver:https://localhost:8085/
+#  config:
+#    import: optional:configserver:https://localhost:8085/
 
 
 
 #register the user service application to eurika server
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka
-#    instance:
-#    preferIpAddress: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+    preferIpAddress: true
 
